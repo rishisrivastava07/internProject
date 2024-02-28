@@ -70,16 +70,6 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.get("/demoUser", async (req, res) => {
-//   let fakeUser = new User({
-//     email: "student@gmail.com",
-//     username: "student",
-//   });
-
-//   let registeredUser = await User.register(fakeUser, "user1234");
-//   res.send(registeredUser);
-// });
-
 // Asset, Performance-Metrics and User Router
 app.use("/assets", assetRouter);
 app.use("/performance-metrics", performanceMetricRouter);
