@@ -4,6 +4,22 @@
 
 # Intern Sample Project - Asset Management System
 
+## Prerequisites
+Before getting started, ensure the following prerequisites are installed:
+
+MongoDB Shell Server:
+
+Ensure that MongoDB is installed and the server is running to support the data storage needs of the application.
+Node.js:
+
+Make sure Node.js is installed to execute the server-side code and manage dependencies.
+Visual Studio Code (VSCode) Editor:
+
+It is recommended to use VSCode for code editing and debugging. Install necessary extensions for Node.js and MongoDB support.
+Java (for MongoDB):
+
+MongoDB might require Java for certain operations. Ensure that Java is installed on your machine.
+
 ## Project Overview
 
 This project is an Asset Management System designed using MongoDB, ExpressJS, and NodeJS. It allows users to perform CRUD operations on assets and performance metrics through RESTful APIs. The system incorporates user authentication using the `passport-local` package for login, logout, and signup functionalities.
