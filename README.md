@@ -13,6 +13,7 @@ This project is an Asset Management System designed using MongoDB, ExpressJS, an
 1. **Clone the Repository:**
    ```bash
    git clone https://github.com/rishisrivastava07/internProject.git
+   cd internProject
    ```
 
 2. **Install Node Modules:**
@@ -21,41 +22,55 @@ This project is an Asset Management System designed using MongoDB, ExpressJS, an
    ```
 
 3. **Initialize the Database:**
+    ```bash
+   cd init
+   node assetInit.js
+   node performanceInit.js
+   cd ..
+   ```
    - Navigate to the `init` folder and set up the initial data for assets and performance metrics.
 
 4. **Run the Server:**
+   - if nodemon is installed
+   ```bash
+   nodemon index.js
+   ```
+   - else, you can use node instead of nodemon
    ```bash
    node index.js
    ```
-
+   
 5. **Access the Server:**
-   Open your browser and go to `http://localhost:8080`.
+   Open your browser and go to `http://localhost:8080/`. 
 
-6. **Perform CRUD Operations:**
+6. **Login Credentials**
+   First signup with the email username and password and then perform following operations
+
+8. **Perform CRUD Operations:**
    Utilize the provided RESTful APIs to perform Create, Read, Update, and Delete operations on assets and performance metrics.
 
 ## Technology Stack
 
 - **MongoDB:**
-  - Utilized for storing data in collections such as assets, performance metrics, and users.
+  - Utilized for storing data in collections such as assets, performance metrics, and users. [documentation](https://www.mongodb.com/docs/)
 
 - **ExpressJS:**
-  - Framework used for building the web application, handling HTTP requests, and defining API routes.
+  - Framework used for building the web application, handling HTTP requests, and defining API routes. [documentation](https://devdocs.io/express/)
 
 - **NodeJS:**
-  - JavaScript runtime used for executing server-side code.
+  - JavaScript runtime used for executing server-side code. [documentation](https://nodejs.org/docs/latest/api/)
 
 - **Passport-local:**
-  - Package used for user authentication, including login, logout, and signup functionalities.
+  - Package used for user authentication, including login, logout, and signup functionalities. [documentation1](https://www.passportjs.org/packages/passport-local/)[documentation2](https://www.npmjs.com/package/passport-local-mongoose)
 
 - **EJS Templates:**
-  - Employed for creating and rendering web pages with dynamic content.
+  - Employed for creating and rendering web pages with dynamic content. [documentation](https://www.npmjs.com/package/ejs)
 
 - **Bootstrap:**
-  - Library used for basic styling and responsiveness of the web pages.
+  - Library used for basic styling and responsiveness of the web pages. [documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/)
 
 - **Mongoose:**
-  - ODM (Object-Document Mapper) for MongoDB, facilitating the interaction between the application and the database.
+  - ODM (Object-Document Mapper) for MongoDB, facilitating the interaction between the application and the database. [documentation](https://mongoosejs.com/docs/index.html)
 
 ## Collections
 
