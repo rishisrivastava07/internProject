@@ -27,7 +27,9 @@ app.use(express.static(path.join(__dirname, "/public")));
 
 main()
   .then(() => {
-    console.log("Database connection established with internProject");
+    console.log(
+      `Database connection established with internProject at Port No : ${port}`
+    );
   })
   .catch((err) => console.log(err));
 
