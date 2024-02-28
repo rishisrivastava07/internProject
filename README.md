@@ -2,7 +2,7 @@
 
 ---
 
-# Intern Project - Asset Management System
+# Intern Sample Project - Asset Management System
 
 ## Project Overview
 
@@ -117,5 +117,3 @@ This project is an Asset Management System designed using MongoDB, ExpressJS, an
 This Asset Management System provides a robust solution for managing assets, performance metrics, and user authentication. It demonstrates proficiency in MongoDB, ExpressJS, NodeJS, and various other technologies, adhering to best practices in development.
 
 ---
-
-Feel free to customize the content based on your project specifics.
