@@ -1,0 +1,78 @@
+<% layout("layouts/boilerPlate") %>
+
+  <body>
+    <div class="container mt-3">
+      <h1 class="heading mt-3">Asset Name - <%= asset.name %>
+      </h1>
+      <hr />
+      <div class="row mt-3">
+        <!-- Asset Information -->
+        <div class="col-md-6 mx-auto">
+          <div class="card mb-3">
+            <div class="card-header fw-bold">Asset Information</div>
+            <div class="card-body">
+              <!-- Asset Table -->
+              <table class="table">
+                <tbody>
+                  <tr>
+                    <th scope="row">Asset ID</th>
+                    <td>
+                      <%= asset._id %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Asset Type</th>
+                    <td>
+                      <%= asset.type %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Location</th>
+                    <td>
+                      <%= asset.location %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Purchase Date</th>
+                    <td>
+                      <%= asset.purchaseDate.toString().split(" ").slice(1, 4).join(" ") %></td>
+                    </tr>
+                    <tr>
+                        <th scope=" row">Initial Cost</th>
+                    <td>&#8377;<%= asset.initialCost %>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th scope="row">Operational Status</th>
+                    <td>
+                      <%= asset.operationalStatus %>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="card-footer fw-bold">User - <%= username %></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-3">
+        <div class="col-md-6 mx-auto d-flex justify-content-around">
+          <form method="GET" action="/assets/<%= asset._id %>/edit">
+            <button type="submit" class="btn btn-info">Edit Asset</button>
+          </form>
+          <form method="POST" action="/assets/<%= asset._id %>?_method=DELETE">
+            <button class="btn btn-danger delete" type="submit">Delete Asset</button>
+          </form>
+          <form method="GET" action="/performance-metrics/<%= asset._id %>/create">
+            <button class="btn btn-info" type="submit" <%=performanceExists ? 'hidden' : '' %> >Create
+              Performance</button>
+          </form>
+          <form method="GET" action="/performance-metrics/<%= asset._id %>/show">
+            <button class="btn btn-info delete" type="submit" <%=performanceExists ? '' : 'hidden' %>>Show
+              Performance</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>

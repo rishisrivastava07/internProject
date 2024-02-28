@@ -1,0 +1,30 @@
+<% layout("layouts/boilerPlate") %>
+  <h1 class="heading mt-3">Overall Performance Metrics :</h1>
+  <hr />
+  <div class="container mt-4 cards">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+      <% for(let performance of performances){ %>
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-header">
+              Efficiency : <%= performance.efficiency * 100 %>&percnt;
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title">Asset Name: <%= performance.assetID.name %>
+              </h5>
+              <p class="card-text">Maintenance Cost: <%= performance.maintenanceCosts %>
+              </p>
+              <a href="/performance-metrics/<%=performance._id%>" class="btn btn-primary mt-auto">Show Performance</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+              Failure Rate : <%= performance.failureRate * 100%>&percnt;
+            </div>
+          </div>
+        </div>
+        <% } %>
+    </div>
+  </div>
+
+  </body>
+
+  </html>

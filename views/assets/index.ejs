@@ -1,0 +1,30 @@
+<% layout("layouts/boilerPlate") %>
+<h1 class="heading mt-3">Asset Performance Analytics Dashboard
+</h1>
+<hr />
+  <div class="container mt-4 cards">
+    <div class="row row-cols-1 row-cols-md-3 g-4 justify-content-center">
+      <% for(let asset of assets){ %>
+        <div class="col">
+          <div class="card h-100 shadow">
+            <div class="card-header">
+              <%= asset.operationalStatus %>
+            </div>
+            <div class="card-body d-flex flex-column justify-content-between">
+              <h5 class="card-title">Asset Name: <%= asset.name %>
+              </h5>
+              <p class="card-text">Initial Cost: <%= asset.initialCost %>
+              </p>
+              <a href="/assets/<%= asset._id %>/" class="btn btn-primary mt-auto">Show Asset</a>
+            </div>
+            <div class="card-footer text-body-secondary">
+              <%= asset.purchaseDate.toString().split(" ").slice(1,4).join(" ") %>
+          </div>
+        </div>
+      </div>
+    <% } %>
+  </div>
+</div>
+
+</body>
+</html>

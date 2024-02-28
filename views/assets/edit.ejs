@@ -1,0 +1,66 @@
+<% layout("layouts/boilerPlate") %>
+
+    <body>
+        <h1 class="heading mt-3">Update Asset</h1>
+        <hr>
+        <form class="needs-validation" method="post" action="/assets/<%= asset._id %>?_method=PUT" novalidate>
+            <div class="mb-3">
+                <label for="name" class="form-label">Asset Name:</label>
+                <input type="text" class="form-control" id="assetName" aria-describedby="asset" name="name"
+                    value="<%= asset.name %>" required>
+            </div>
+            <div class="mb-3">
+                <label for="type" class="form-label">Asset Type:</label>
+                <input type="text" class="form-control" id="assetType" name="type" value="<%= asset.type %>" required />
+            </div>
+            <div class="row g-3">
+                <div class="col mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" class="form-control" id="location" name="location" value="<%= asset.location %>"
+                        required />
+                </div>
+                <div class="col mb-3">
+                    <label for="purchaseDate" class="form-label">Purchase Date:</label>
+                    <input type="date" class="form-control" id="purchaseDate" name="purchaseDate" <% if
+                        (asset.purchaseDate) { %>
+                    value="<%= asset.purchaseDate.toISOString().split('T')[0] %>"
+                        <% } %> required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="initialCost" class="form-label">Initial Cost:</label>
+                <input type="text" id="initialCost" class="form-control" name="initialCost"
+                    value="<%= asset.initialCost %>" required />
+            </div>
+            <div class="mb-3">
+                <label for="operationalStatus" class="form-label">Operational Status:</label>
+                <select class="form-control form-select" id="operationalStatus" aria-label="Default select example"
+                    name="operationalStatus" required>
+                    <option value="" <% if (!asset.operationalStatus) { %> selected <% } %>>Select Status</option>
+                    <option value="Operational" <% if (asset.operationalStatus==='Operational' ) { %> selected <% } %>
+                            >Operational</option>
+                    <option value="In Use" <% if (asset.operationalStatus==='In Use' ) { %> selected <% } %>> In Use
+                    </option>
+                    <option value="In Repair" <% if (asset.operationalStatus==='In Repair' ) { %> selected <% } %>
+                            >In Repair</option>
+                    <option value="Out of Service" <% if (asset.operationalStatus==='Out of Service' ) { %> selected
+                        <% } %>>Out of Service
+                    </option>
+                </select>
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required>
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">
+                        You must agree before submitting.
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 d-grid gap-2 col-2 mx-auto">
+                <button type="submit" class="btn btn-outline-primary">Update Asset</button>
+            </div>
+        </form>
+    </body>

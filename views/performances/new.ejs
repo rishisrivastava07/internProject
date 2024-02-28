@@ -1,0 +1,50 @@
+<% layout("layouts/boilerPlate") %>
+
+    <body>
+        <h1 class="heading mt-3">
+            Create Performance of <%= asset.name %>
+        </h1>
+
+        <hr />
+        <form class="needs-validation" method="post" action="/performance-metrics/<%= asset._id %>?_method=POST"
+            novalidate>
+            <input type="hidden" name="assetID" value="<%= asset._id %>">
+            <div class="mb-3">
+                <label for="uptime" class="form-label">Uptime:</label>
+                <input type="Number" class="form-control" id="uptime" aria-describedby="uptime" name="uptime"
+                    required />
+            </div>
+            <div class="mb-3">
+                <label for="downtime" class="form-label">Asset Downtime:</label>
+                <input type="Number" class="form-control" id="downtime" name="downtime" required />
+            </div>
+            <div class="row g-3">
+                <div class="col mb-3">
+                    <label for="efficiency" class="form-label">Efficiency:</label>
+                    <input type="text" class="form-control" id="efficiency" name="efficiency" required />
+                </div>
+                <div class="col mb-3">
+                    <label for="failureRate" class="form-label">Failure Rate:</label>
+                    <input type="text" class="form-control" id="failureRate" name="failureRate" required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="maintenanceCosts" class="form-label">Maintenance Cost:</label>
+                <input type="Number" class="form-control" id="maintenanceCosts" name="maintenanceCosts" required />
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+            </div>
+            <div class="mb-3 d-grid gap-2 col-2 mx-auto">
+                <button type="submit" class="btn btn-outline-primary">
+                    Update Performance
+                </button>
+            </div>
+        </form>
+    </body>

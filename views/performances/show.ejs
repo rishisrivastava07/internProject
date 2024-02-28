@@ -1,0 +1,139 @@
+<% layout("layouts/boilerPlate") %>
+
+    <body>
+        <div class="container mt-3">
+            <h1 class="heading mt-3">
+                Asset Performance Details - <%= performance.assetID.name %>
+            </h1>
+
+            <hr />
+
+            <div class="row">
+                <!-- Asset Information -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header fw-bold">Asset Information</div>
+                        <div class="card-body">
+                            <!-- Asset Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Asset ID</th>
+                                        <td>
+                                            <%= performance.assetID._id %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Asset Type</th>
+                                        <td>
+                                            <%= performance.assetID.type %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Location</th>
+                                        <td>
+                                            <%= performance.assetID.location %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Purchase Date</th>
+                                        <td>
+                                            <%= performance.assetID.purchaseDate.toString().split(" ").slice(1, 4).join(" ") %>
+                  </td>
+                </tr>
+                <tr>
+                  <th scope=" row">Initial Cost</th>
+                                        <td>&#8377;<%= performance.assetID.initialCost %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Operational Status</th>
+                                        <td>
+                                            <%= performance.assetID.operationalStatus %>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Performance Metrics -->
+                <div class="col-md-6">
+                    <div class="card mb-3">
+                        <div class="card-header fw-bold">Performance Metrics</div>
+                        <div class="card-body">
+                            <!-- Performance Table -->
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Performance ID</th>
+                                        <td>
+                                            <%= performance._id %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Uptime</th>
+                                        <td>
+                                            <%= performance.uptime %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Downtime</th>
+                                        <td>
+                                            <%= performance.downtime %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Maintenance Cost</th>
+                                        <td>
+                                            <%= performance.maintenanceCosts %>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Failure Rate</th>
+                                        <td>
+                                            <%= (performance.failureRate * 100).toFixed(2) %>&percnt;
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Efficiency</th>
+                                        <td>
+                                            <%= (performance.efficiency * 100).toFixed(2) %>&percnt;
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Edit/Delete Buttons -->
+            <div class="row mt-3">
+                <div class="col-md-6 actions">
+                    <form method="GET" action="/assets/<%= performance.assetID._id %>/edit">
+                        <button type="submit" class="btn btn-info edit">Edit Asset</button>
+                    </form>
+                    <form method="POST" action="/assets/<%= performance.assetID._id %>?_method=DELETE">
+                        <button class="btn btn-danger delete" type="submit">
+                            Delete Asset
+                        </button>
+                    </form>
+                </div>
+
+                <div class="col-md-6 actions">
+                    <form method="GET" action="/performance-metrics/<%= performance._id %>/edit">
+                        <button type="submit" class="btn btn-info edit">
+                            Edit Performance
+                        </button>
+                    </form>
+                    <form method="POST" action="/performance-metrics/<%= performance._id %>?_method=DELETE">
+                        <button class="btn btn-danger delete" type="submit">
+                            Delete Performance
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </body>

@@ -1,0 +1,53 @@
+<% layout("layouts/boilerPlate") %>
+
+    <body>
+        <h1 class="heading mt-3">
+            Update Performance of <%= performance.assetID.name %>
+        </h1>
+        <hr />
+        <form class="needs-validation" method="post" action="/performance-metrics/<%= performance._id %>?_method=PATCH"
+            novalidate>
+            <input type="hidden" name="assetID" value="<%= performance.assetID._id %>">
+            <div class="mb-3">
+                <label for="uptime" class="form-label">Uptime:</label>
+                <input type="Number" class="form-control" id="uptime" aria-describedby="uptime" name="uptime"
+                    value="<%= performance.uptime %>" required />
+            </div>
+            <div class="mb-3">
+                <label for="downtime" class="form-label">Asset Downtime:</label>
+                <input type="Number" class="form-control" id="downtime" name="downtime"
+                    value="<%= performance.downtime %>" required />
+            </div>
+            <div class="row g-3">
+                <div class="col mb-3">
+                    <label for="efficiency" class="form-label">Efficiency:</label>
+                    <input type="text" class="form-control" id="efficiency" name="efficiency"
+                        value="<%= performance.efficiency %>" required />
+                </div>
+                <div class="col mb-3">
+                    <label for="failureRate" class="form-label">Failure Rate:</label>
+                    <input type="text" class="form-control" id="failureRate" name="failureRate"
+                        value="<%= performance.failureRate %>" required />
+                </div>
+            </div>
+            <div class="mb-3">
+                <label for="maintenanceCosts" class="form-label">Maintenance Cost:</label>
+                <input type="Number" class="form-control" id="maintenanceCosts" name="maintenanceCosts"
+                    value="<%= performance.maintenanceCosts %>" required />
+            </div>
+            <div class="col-12">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="invalidCheck" required />
+                    <label class="form-check-label" for="invalidCheck">
+                        Agree to terms and conditions
+                    </label>
+                    <div class="invalid-feedback">You must agree before submitting.</div>
+                </div>
+            </div>
+            <div class="mb-3 d-grid gap-2 col-2 mx-auto">
+                <button type="submit" class="btn btn-outline-primary">
+                    Update Performance
+                </button>
+            </div>
+        </form>
+    </body>

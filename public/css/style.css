@@ -1,0 +1,142 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f4f1de !important;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Navbar Styling */
+nav.navbar {
+  background-color: #3d405b !important; /* Background color */
+  height: 6rem;
+  box-shadow: 2px 2px 5px 1px rgba(0, 0, 0, 0.4);
+}
+
+nav.navbar .nav-link {
+  color: #f4f1de !important; /* Text color */
+  font-weight: 600 !important;
+  font-size: medium !important;
+}
+
+nav.navbar .fa-chart-pie {
+  color: #f4f1de; /* Icon color */
+  font-size: 3rem;
+  margin-right: 1rem !important;
+}
+
+nav.navbar .navbar-brand {
+  display: flex;
+  align-items: center;
+  font-weight: 600 !important;
+  color: #f4f1de;
+}
+
+.navbar-toggler-icon {
+  background-color: #f4f1de !important;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #f2cc8f !important;
+  text-decoration: underline !important;
+}
+
+/* Footer Styling */
+.body-with-footer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.footer {
+  margin-top: auto; /* Push the footer to the bottom */
+}
+
+.footer a,
+.copyright {
+  text-decoration: none;
+  color: #f4f1de;
+}
+
+.f-info-social-links,
+.f-info-links {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer-links:hover {
+  color: #f2cc8f;
+}
+
+.f-info-socials-links i {
+  font-size: 1.25rem;
+  margin-right: 3rem;
+}
+
+.f-info {
+  height: 7rem;
+  background-color: #3d405b !important;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: space-between;
+  text-align: center;
+}
+
+/* Body */
+.cards {
+  cursor: pointer;
+}
+
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+.btn {
+  background-color: #e07a5f !important;
+  color: #f4f1de !important;
+}
+
+/* Show Styling */
+.edit {
+  background-color: #e07a5f !important;
+  margin-right: 2rem;
+}
+
+.delete {
+  background-color: #3d405b !important;
+  border: none;
+  color: #f4f1de;
+}
+
+.actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+/* Update Styling */
+.heading {
+  text-align: center;
+  font-weight: 700;
+}
+
+/* Error Alerts */
+.errorAlert {
+  text-align: center;
+}
+
+.assets-info,
+.performance-form {
+  text-align: center;
+}
